@@ -36,21 +36,31 @@
         # host specific
         (import ./hosts/mac.nix {
           self = self;
+          pkgs = darwinPkgs;
           nix-homebrew = nix-homebrew;
           mac-app-util = mac-app-util;
         })
-        
-	# common
-        ./configuration/common/pkgs.nix
-        ./configuration/common/fonts.nix
-        
-	# darwin
-        ./configuration/darwin/system_settings.nix
-        ./configuration/darwin/brew.nix
- 
- 	# home-manager
-        (import ./configuration/home-manager/mac.nix {hm = home-manager;})
-        (import ./configuration/home-manager/common.nix {pkgs = darwinPkgs; hm = home-manager;})
+
+        # common
+        ./configuration/common
+
+        # darwin
+        ./configuration/darwin
+
+        # home-manager
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+
+          # Fixes home-manager spotlight search
+          home-manager.sharedModules = [
+            mac-app-util.homeManagerModules.default
+          ];
+
+          # home-manager.extraSpecialArgs = specialArgs;
+          home-manager.users."mf" = import ./configuration/home;
+        }
       ];
     };
 

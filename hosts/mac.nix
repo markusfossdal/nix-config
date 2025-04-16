@@ -1,5 +1,6 @@
 {
   self,
+  pkgs,
   nix-homebrew,
   mac-app-util,
   ...
@@ -23,8 +24,11 @@
     mac-app-util.darwinModules.default
   ];
 
-  #home folder
-  users.users.mf.home = "/Users/mf";
+  #home folder and default shell
+  users.users.mf = {
+    home = "/Users/mf";
+    shell = pkgs.zsh;
+  };
 
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
@@ -39,7 +43,7 @@
   # Allow unfree software to be installed
   nixpkgs.config.allowUnfree = true;
 
-  #FIGURE OUT WHAT THIS DOES...
+  #Sets rust toolchain to stable version
   # This script will run at activation time
   system.activationScripts.rustup = {
     text = ''
