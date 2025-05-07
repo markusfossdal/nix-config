@@ -20,7 +20,6 @@
       "/Applications/Microsoft Outlook.app"
       "/Applications/Spotify.app"
       "/System/Applications/Messages.app"
-      "/Applications/Google Chrome.app"
       "/System/Applications/Notes.app"
     ];
     dock.show-recents = false;

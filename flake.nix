@@ -13,7 +13,8 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     mac-app-util.url = "github:hraban/mac-app-util";
 
-    nixvim.url = "/Users/mf/nixvim-config";
+    # nixvim.url = "/Users/mf/nixvim-config";
+    nixvim.url = "github:markusfossdal/nixvim-config";
   };
 
   outputs = inputs @ {

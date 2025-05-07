@@ -11,10 +11,11 @@
   # programs.neovim.enable = true;
 
   programs.alacritty.enable = true;
-  programs.yazi.enable = true;
+  # programs.yazi.enable = true;
 
   home.packages = with pkgs; [
-    inputs.nixvim.packages.${pkgs.system}.default
+    yazi
+    inputs.nixvim.packages.${pkgs.system}.default #includes nixvim
     lsd
     youtube-music
     ripgrep
