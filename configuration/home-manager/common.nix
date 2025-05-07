@@ -1,13 +1,22 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   # Common home-manager settings
 
   # packages
   programs.tmux.enable = true;
   # programs.rust.enable = true;
-  programs.neovim.enable = true;
+  # programs.neovim.enable = true;
+
   programs.alacritty.enable = true;
+  programs.yazi.enable = true;
 
   home.packages = with pkgs; [
+    inputs.nixvim.packages.${pkgs.system}.default
+    lsd
+    youtube-music
     ripgrep
     vlc-bin
     rustup
@@ -24,6 +33,9 @@
     nodejs
     alejandra #nvim formatter
     lazygit
+    discord
+    vscode
+    google-chrome
   ];
 
   #config with options:

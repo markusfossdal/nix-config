@@ -10,5 +10,6 @@
 
   home.file = {
     "/.config/alacritty".source = "/Users/mf/dotfiles/alacritty";
+    # "/.config/nvim".source = "/Users/mf/dotfiles/nvim";
   };
 }

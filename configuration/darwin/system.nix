@@ -12,14 +12,16 @@
     dock.largesize = 64;
     dock.orientation = "bottom"; # "left", "right", or "bottom"
     dock.persistent-apps = [
+      "${pkgs.google-chrome}/Applications/Google Chrome.app"
+      "${pkgs.alacritty}/Applications/Alacritty.app"
       "/System/Applications/System Settings.app"
       "/System/Applications/FindMy.app"
       "/Applications/Microsoft Teams.app"
       "/Applications/Microsoft Outlook.app"
+      "/Applications/Spotify.app"
       "/System/Applications/Messages.app"
       "/Applications/Google Chrome.app"
       "/System/Applications/Notes.app"
-      "${pkgs.alacritty}/Applications/Alacritty.app"
     ];
     dock.show-recents = false;
     dock.persistent-others = [];

@@ -6,8 +6,7 @@
   ...
 }: {
   # Packages that needs manual installation
-  #	xcode (triggered by git pull the first time)
-  # 1password
+  #xcode (triggered by git pull the first time)
 
   imports = [
     # homebrew

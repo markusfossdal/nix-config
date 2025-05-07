@@ -12,6 +12,8 @@
 
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     mac-app-util.url = "github:hraban/mac-app-util";
+
+    nixvim.url = "/Users/mf/nixvim-config";
   };
 
   outputs = inputs @ {
@@ -21,6 +23,7 @@
     home-manager,
     nix-homebrew,
     mac-app-util,
+    nixvim,
     ...
   }: let
     darwinSystem = "aarch64-darwin";
@@ -59,7 +62,10 @@
           ];
 
           # home-manager.extraSpecialArgs = specialArgs;
-          home-manager.users."mf" = import ./configuration/home;
+          home-manager.users."mf" = import ./configuration/home-manager;
+
+          #pass inputs to home-manager
+          home-manager.extraSpecialArgs = {inherit inputs;};
         }
       ];
     };

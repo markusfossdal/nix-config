@@ -15,12 +15,8 @@
       "microsoft-teams"
       "microsoft-outlook"
       "spotify"
-      "visual-studio-code"
       "microsoft-auto-update"
-      "discord"
       "logi-options+"
-      "google-chrome"
-      # "karabiner-elements"
       "1password"
     ];
     masApps = {
