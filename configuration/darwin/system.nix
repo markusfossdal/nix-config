@@ -12,6 +12,7 @@
     dock.largesize = 64;
     dock.orientation = "bottom"; # "left", "right", or "bottom"
     dock.persistent-apps = [
+      "/Applications/1Password.app"
       "${pkgs.google-chrome}/Applications/Google Chrome.app"
       "${pkgs.alacritty}/Applications/Alacritty.app"
       "/System/Applications/System Settings.app"
