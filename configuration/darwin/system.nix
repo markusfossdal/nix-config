@@ -78,7 +78,7 @@
     trackpad.TrackpadThreeFingerTapGesture = 0;
 
     # accesibility
-    universalaccess.mouseDriverCursorSize = 1.0;
+    # universalaccess.mouseDriverCursorSize = 1.0;
 
     # system software updates
     SoftwareUpdate.AutomaticallyInstallMacOSUpdates = false;
