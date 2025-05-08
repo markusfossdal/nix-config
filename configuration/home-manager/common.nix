@@ -14,15 +14,21 @@
   #   enable = true;
   # };
 
-    programs.alacritty = {
+  programs.alacritty = {
     enable = true;
     settings = {
       window = {
-        opacity = 0.9;
-        padding = { x = 5; y = 5; };
+        opacity = 1.0;
+        padding = {
+          x = 5;
+          y = 5;
+        };
       };
 
-      font.normal.family = "FiraCode Nerd Font";
+      font = {
+        size = 16.0;
+        normal.family = "JetBrainsMono Nerd Font";
+      };
 
       colors = {
         primary = {
@@ -30,39 +36,26 @@
           foreground = "0xcdd6f4";
         };
         normal = {
-          black   = "0x45475a";
-          red     = "0xf38ba8";
-          green   = "0xa6e3a1";
-          yellow  = "0xf9e2af";
-          blue    = "0x89b4fa";
+          black = "0x45475a";
+          red = "0xf38ba8";
+          green = "0xa6e3a1";
+          yellow = "0xf9e2af";
+          blue = "0x89b4fa";
           magenta = "0xf5c2e7";
-          cyan    = "0x94e2d5";
-          white   = "0xbac2de";
+          cyan = "0x94e2d5";
+          white = "0xbac2de";
         };
         bright = {
-          black   = "0x585b70";
-          red     = "0xf38ba8";
-          green   = "0xa6e3a1";
-          yellow  = "0xf9e2af";
-          blue    = "0x89b4fa";
+          black = "0x585b70";
+          red = "0xf38ba8";
+          green = "0xa6e3a1";
+          yellow = "0xf9e2af";
+          blue = "0x89b4fa";
           magenta = "0xf5c2e7";
-          cyan    = "0x94e2d5";
-          white   = "0xa6adc8";
+          cyan = "0x94e2d5";
+          white = "0xa6adc8";
         };
       };
-
-      key_bindings = [
-        {
-          key = "N";
-          mods = "Control|Shift";
-          action = "CreateNewWindow";
-        }
-        {
-          key = "Q";
-          mods = "Control|Shift";
-          action = "Quit";
-        }
-      ];
     };
   };
 

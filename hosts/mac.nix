@@ -40,7 +40,7 @@
   system.stateVersion = 6;
 
   # Allow unfree software to be installed
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfree = true;
 
   #Sets rust toolchain to stable version
   # This script will run at activation time
