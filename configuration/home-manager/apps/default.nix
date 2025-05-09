@@ -1,0 +1,5 @@
+{lib, ...}: {
+  imports = [
+    ./alacritty.nix
+  ];
+}

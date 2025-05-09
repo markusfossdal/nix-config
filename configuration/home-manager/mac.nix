@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    rectangle
+    # rectangle
   ];
 
   # Mac specific home-manager settings

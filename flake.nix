@@ -1,5 +1,5 @@
 {
-  description = "Top level flake";
+  description = "wfv top level flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -24,20 +24,20 @@
     home-manager,
     nix-homebrew,
     mac-app-util,
-    nixvim,
+    # nixvim,
     ...
   }: let
     darwinSystem = "aarch64-darwin";
     linuxSystem = "x86_64-linux";
 
     darwinPkgs = import nixpkgs {
-                system = darwinSystem;
-                config.allowUnfree = true;
-            };
+      system = darwinSystem;
+      config.allowUnfree = true;
+    };
     linuxPkgs = import nixpkgs {
-                system = linuxSystem;
-                config.allowUnfree = true;
-            };
+      system = linuxSystem;
+      config.allowUnfree = true;
+    };
   in {
     darwinConfigurations."mbp" = nix-darwin.lib.darwinSystem {
       system = darwinSystem;
@@ -52,7 +52,7 @@
         })
 
         # common
-        ./configuration/common
+        # ./configuration/common
 
         # darwin
         ./configuration/darwin
@@ -79,5 +79,13 @@
 
     # Expose nix-darwin package set and overlays
     darwinPackages = self.darwinConfigurations."mbp".pkgs;
+
+    homeConfigurations."mf@wfv" = home-manager.lib.homeManagerConfiguration {
+      system = linuxSystem;
+      pkgs = linuxPkgs;
+      modules = [
+        ./configuration/home-manager
+      ];
+    };
   };
 }
