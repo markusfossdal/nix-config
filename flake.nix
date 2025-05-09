@@ -13,8 +13,8 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     mac-app-util.url = "github:hraban/mac-app-util";
 
-    # nixvim.url = "/Users/mf/nixvim-config";
-    nixvim.url = "github:markusfossdal/nixvim-config";
+    nixvim.url = "/Users/mf/nixvim-config";
+    #nixvim.url = "github:markusfossdal/nixvim-config";
   };
 
   outputs = inputs @ {
@@ -24,7 +24,7 @@
     home-manager,
     nix-homebrew,
     mac-app-util,
-    # nixvim,
+    nixvim,
     ...
   }: let
     darwinSystem = "aarch64-darwin";
@@ -81,8 +81,10 @@
     darwinPackages = self.darwinConfigurations."mbp".pkgs;
 
     homeConfigurations."mf@wfv" = home-manager.lib.homeManagerConfiguration {
-      system = linuxSystem;
-      pkgs = linuxPkgs;
+      # system = linuxSystem;
+      # pkgs = linuxPkgs;
+      inherit linuxSystem;
+      inherit linuxPkgs;
       modules = [
         ./configuration/home-manager
       ];
