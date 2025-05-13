@@ -64,19 +64,35 @@
             mac-app-util.homeManagerModules.default
           ];
 
-          # home-manager.extraSpecialArgs = specialArgs;
-          # home-manager.users."mf" = import ./configuration/home-manager;
-          home-manager.users."mf" = let
-            userModules = [
-              ./configuration/home-manager/common.nix
-              ./configuration/home-manager/environment.nix
-              ./configuration/home-manager/fonts.nix
-              ./configuration/home-manager/system.nix
-              ./configuration/home-manager/sh.nix
-              ./configuration/home-manager/darwin/default.nix
+          home-manager.users."mf" = {
+            imports = [
+              (import ./configuration/home-manager/common.nix {
+                self = self;
+                pkgs = darwinPkgs;
+                inherit inputs;
+              })
+              (import ./configuration/home-manager/environment.nix {
+                self = self;
+                pkgs = darwinPkgs;
+              })
+              (import ./configuration/home-manager/fonts.nix {
+                self = self;
+                pkgs = darwinPkgs;
+              })
+              (import ./configuration/home-manager/system.nix {
+                self = self;
+                pkgs = darwinPkgs;
+              })
+              (import ./configuration/home-manager/sh.nix {
+                self = self;
+                pkgs = darwinPkgs;
+              })
+              (import ./configuration/home-manager/darwin/default.nix {
+                self = self;
+                pkgs = darwinPkgs;
+              })
             ];
-          in
-            builtins.foldl' (a: b: a // b) {} (map import userModules);
+          };
 
           #pass inputs to home-manager
           home-manager.extraSpecialArgs = {inherit inputs;};

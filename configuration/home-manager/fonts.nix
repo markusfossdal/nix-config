@@ -1,11 +1,8 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   # fonts.packages = [
   #   pkgs.nerd-fonts.jetbrains-mono
   # ];
-home.packages = [
+  home.packages = [
     pkgs.nerd-fonts.jetbrains-mono
   ];
 }
