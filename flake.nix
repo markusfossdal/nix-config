@@ -67,28 +67,25 @@
           home-manager.users."mf" = {
             imports = [
               (import ./configuration/home-manager/common.nix {
-                self = self;
                 pkgs = darwinPkgs;
                 inherit inputs;
               })
               (import ./configuration/home-manager/environment.nix {
-                self = self;
                 pkgs = darwinPkgs;
               })
               (import ./configuration/home-manager/fonts.nix {
-                self = self;
                 pkgs = darwinPkgs;
               })
               (import ./configuration/home-manager/system.nix {
-                self = self;
                 pkgs = darwinPkgs;
               })
               (import ./configuration/home-manager/sh.nix {
-                self = self;
+                pkgs = darwinPkgs;
+              })
+              (import ./configuration/home-manager/dotfiles.nix {
                 pkgs = darwinPkgs;
               })
               (import ./configuration/home-manager/darwin/default.nix {
-                self = self;
                 pkgs = darwinPkgs;
               })
             ];

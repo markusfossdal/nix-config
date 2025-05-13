@@ -10,7 +10,7 @@
     lsd
     ripgrep
     rustup
-    nerd-fonts.jetbrains-mono
+    # nerd-fonts.jetbrains-mono
     bat
     btop
     fzf
