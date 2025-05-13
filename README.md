@@ -14,6 +14,7 @@ curl
 ```
 experimental-features = nix-command flakes
 ```
+- Move or delete `~/.bashrc` and `~/.profile`
 
 - Run by using eiter
 
