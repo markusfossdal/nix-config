@@ -13,8 +13,7 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     mac-app-util.url = "github:hraban/mac-app-util";
 
-    nixvim.url = "/Users/mf/nixvim-config";
-    #nixvim.url = "github:markusfossdal/nixvim-config";
+    nixvim.url = "github:markusfossdal/nixvim-config";
   };
 
   outputs = inputs @ {
@@ -51,9 +50,6 @@
           mac-app-util = mac-app-util;
         })
 
-        # common
-        # ./configuration/common
-
         # darwin
         ./configuration/darwin
 
@@ -69,7 +65,18 @@
           ];
 
           # home-manager.extraSpecialArgs = specialArgs;
-          home-manager.users."mf" = import ./configuration/home-manager;
+          # home-manager.users."mf" = import ./configuration/home-manager;
+          home-manager.users."mf" = let
+            userModules = [
+              ./configuration/home-manager/common.nix
+              ./configuration/home-manager/environment.nix
+              ./configuration/home-manager/fonts.nix
+              ./configuration/home-manager/system.nix
+              ./configuration/home-manager/sh.nix
+              ./configuration/home-manager/darwin/default.nix
+            ];
+          in
+            builtins.foldl' (a: b: a // b) {} (map import userModules);
 
           #pass inputs to home-manager
           home-manager.extraSpecialArgs = {inherit inputs;};
@@ -81,13 +88,22 @@
     darwinPackages = self.darwinConfigurations."mbp".pkgs;
 
     homeConfigurations."mf@wfv" = home-manager.lib.homeManagerConfiguration {
-      # system = linuxSystem;
-      # pkgs = linuxPkgs;
-      inherit linuxSystem;
-      inherit linuxPkgs;
+      pkgs = import nixpkgs {
+        system = linuxSystem;
+        config.allowUnfree = true;
+      };
+      lib = linuxPkgs.lib;
       modules = [
-        ./configuration/home-manager
+        ./configuration/home-manager/common.nix
+        ./configuration/home-manager/environment.nix
+        ./configuration/home-manager/fonts.nix
+        ./configuration/home-manager/system.nix
+        ./configuration/home-manager/sh.nix
+        ./configuration/home-manager/ubuntu/default.nix
       ];
+      extraSpecialArgs = {
+        inherit inputs;
+      };
     };
   };
 }

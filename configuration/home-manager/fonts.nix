@@ -1,10 +1,11 @@
 {
-  config,
   pkgs,
-  lib,
   ...
 }: {
-  fonts.packages = [
+  # fonts.packages = [
+  #   pkgs.nerd-fonts.jetbrains-mono
+  # ];
+home.packages = [
     pkgs.nerd-fonts.jetbrains-mono
   ];
 }
