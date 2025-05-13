@@ -32,6 +32,7 @@ home-manager switch
 ### Software not managed by home-manager
 ```
 alacritty
+dropbox
 1password
 google-chrome
 ros2
