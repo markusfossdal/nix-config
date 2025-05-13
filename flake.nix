@@ -82,7 +82,7 @@
               (import ./configuration/home-manager/sh.nix {
                 pkgs = darwinPkgs;
               })
-              (import ./configuration/home-manager/dotfiles.nix {
+              (import ./configuration/home-manager/dotfiles {
                 pkgs = darwinPkgs;
               })
               (import ./configuration/home-manager/darwin/default.nix {
@@ -109,6 +109,7 @@
       modules = [
         ./configuration/home-manager/common.nix
         ./configuration/home-manager/environment.nix
+        ./configuration/home-manager/dotfiles
         ./configuration/home-manager/fonts.nix
         ./configuration/home-manager/system.nix
         ./configuration/home-manager/sh.nix
