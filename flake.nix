@@ -84,6 +84,7 @@
               })
               (import ./configuration/home-manager/system.nix {
                 pkgs = darwinPkgs;
+                lib = darwinPkgs.lib;
               })
               # (import ./configuration/home-manager/environment.nix {
               #   pkgs = darwinPkgs;
