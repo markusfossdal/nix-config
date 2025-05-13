@@ -19,7 +19,7 @@ experimental-features = nix-command flakes
 - Run by using eiter
 
 ```
-nix run .#homeConfigurations.mf@wfv.activationPackage
+nix run .#homeConfigurations.$USER@$HOST.activationPackage
 ```
 
 or by installing standalone home-manager (recommended) from the official [github](https://github.com/nix-community/home-manager) repo.
