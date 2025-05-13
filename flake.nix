@@ -73,9 +73,6 @@
               (import ./configuration/home-manager/darwin/default.nix {
                 pkgs = darwinPkgs;
               })
-              (import ./configuration/home-manager/environment.nix {
-                pkgs = darwinPkgs;
-              })
               (import ./configuration/home-manager/fonts.nix {
                 pkgs = darwinPkgs;
               })
@@ -88,6 +85,9 @@
               (import ./configuration/home-manager/system.nix {
                 pkgs = darwinPkgs;
               })
+              # (import ./configuration/home-manager/environment.nix {
+              #   pkgs = darwinPkgs;
+              # })
             ];
           };
 
@@ -109,11 +109,11 @@
       modules = [
         ./configuration/home-manager/common.nix
         ./configuration/home-manager/ubuntu/default.nix
-        ./configuration/home-manager/environment.nix
         ./configuration/home-manager/fonts.nix
         ./configuration/home-manager/sh.nix
         ./configuration/home-manager/dotfiles
         ./configuration/home-manager/system.nix
+        # ./configuration/home-manager/environment.nix
       ];
       extraSpecialArgs = {
         inherit inputs;

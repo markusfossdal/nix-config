@@ -1,7 +1,26 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  commonShellAliases = {
+    lg = "lazygit";
+    ls = "lsd -F --icon never";
+    cat = ''bat'';
+    fzf = ''      selected="$(
+                  	find . \( -path './.git' -o -path './node_modules' -o -path './dist' \) -prune -o -type f -print |
+                  	command fzf --preview 'bat --style=numbers --color=always {}'
+                	)"
+                	[ -n "$selected" ] && nvim "$selected"'';
+  };
+
+  commonSessionVariables = {
+    EDITOR = "nvim";
+    NIXPKGS_ALLOW_UNFREE = "1";
+    ROS_DOMAIN_ID = "16";
+  };
+in {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
+    sessionVariables = commonSessionVariables;
+    shellAliases = commonShellAliases;
 
     oh-my-zsh = {
       enable = true;
@@ -14,19 +33,10 @@
 
   programs.bash = {
     enable = true;
+    sessionVariables = commonSessionVariables;
+    shellAliases = commonShellAliases;
     initExtra = ''
       exec zsh
     '';
-  };
-
-  home.shellAliases = {
-    lg = "lazygit";
-    ls = "lsd -F --icon never";
-    cat = ''bat'';
-    fzf = ''      selected="$(
-            	find . \( -path './.git' -o -path './node_modules' -o -path './dist' \) -prune -o -type f -print |
-            	command fzf --preview 'bat --style=numbers --color=always {}'
-          	)"
-          	[ -n "$selected" ] && nvim "$selected"'';
   };
 }
