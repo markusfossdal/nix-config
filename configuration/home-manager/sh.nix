@@ -20,6 +20,7 @@
   };
 
   home.shellAliases = {
+    lg = "lazygit";
     ls = "lsd -F --icon never";
     cat = ''bat'';
     fzf = ''      selected="$(
