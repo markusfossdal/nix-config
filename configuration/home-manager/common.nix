@@ -4,18 +4,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    yazi
-    tmux
-    inputs.nixvim.packages.${pkgs.system}.default #includes nixvim
-    lsd
-    ripgrep
-    rustup
-    # nerd-fonts.jetbrains-mono
-    bat
-    btop
-    fzf
-    wget
-    tree
+    # --- DEV toolchain
     llvmPackages.clang
     llvmPackages.lld
     llvmPackages.llvm
@@ -24,7 +13,20 @@
     cmake
     nodejs
     alejandra #nvim formatter
+    rustup
+    # --- APPS
+    yazi
+    tmux
+    inputs.nixvim.packages.${pkgs.system}.default #includes nixvim
+    lsd
+    ripgrep
+    bat
+    btop
+    fzf
+    wget
+    tree
     lazygit
     git
+    curl
   ];
 }
