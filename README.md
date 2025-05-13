@@ -29,4 +29,12 @@ to switch
 ```
 home-manager switch
 ```
-
+### Software not managed by home-manager
+```
+alacritty
+1password
+google-chrome
+ros2
+gazebo
+matlab
+```
