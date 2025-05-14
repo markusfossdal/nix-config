@@ -22,13 +22,6 @@ experimental-features = nix-command flakes
 nix run .#homeConfigurations.$USER@$HOST.activationPackage
 ```
 
-or by installing standalone home-manager (recommended) from the official [github](https://github.com/nix-community/home-manager) repo.
-
-to switch
-
-```
-home-manager switch
-```
 ### Software not managed by home-manager
 ```
 alacritty
