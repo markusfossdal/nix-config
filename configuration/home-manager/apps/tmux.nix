@@ -10,6 +10,8 @@ pkgs,
         terminal = "tmux-256color";
         extraConfig = ''
                 #general
+                set-option -g default-shell "${pkgs.zsh}/bin/zsh"
+                set-option -g default-command "${pkgs.zsh}/bin/zsh -l"
                 set-option -sa terminal-overrides ',alacritty:RGB'
                 set -g allow-passthrough on
                 set-option -sg escape-time 10

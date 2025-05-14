@@ -2,7 +2,7 @@
   #alacritty
   home.file = {
     "/.config/alacritty/alacritty.toml".text = ''
-      [shell]
+      [terminal.shell]
       program = "zsh"
       args = ["--login"]
 
