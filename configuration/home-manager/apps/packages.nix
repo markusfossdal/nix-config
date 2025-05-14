@@ -3,6 +3,7 @@
   inputs,
   ...
 }: {
+
   home.packages = with pkgs; [
     # --- DEV toolchain
     llvmPackages.clang
@@ -16,7 +17,6 @@
     rustup
     # --- APPS
     yazi
-    tmux
     inputs.nixvim.packages.${pkgs.system}.default #includes nixvim
     lsd
     ripgrep

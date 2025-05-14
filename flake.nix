@@ -66,7 +66,7 @@
 
           home-manager.users."mf" = {
             imports = [
-              (import ./configuration/home-manager/common.nix {
+              (import ./configuration/home-manager/apps {
                 pkgs = darwinPkgs;
                 inherit inputs;
               })
@@ -86,9 +86,6 @@
                 pkgs = darwinPkgs;
                 lib = darwinPkgs.lib;
               })
-              # (import ./configuration/home-manager/environment.nix {
-              #   pkgs = darwinPkgs;
-              # })
             ];
           };
 
@@ -108,13 +105,12 @@
       };
       lib = linuxPkgs.lib;
       modules = [
-        ./configuration/home-manager/common.nix
+        ./configuration/home-manager/apps
         ./configuration/home-manager/ubuntu/default.nix
         ./configuration/home-manager/fonts.nix
         ./configuration/home-manager/sh.nix
         ./configuration/home-manager/dotfiles
         ./configuration/home-manager/system.nix
-        # ./configuration/home-manager/environment.nix
       ];
       extraSpecialArgs = {
         inherit inputs;

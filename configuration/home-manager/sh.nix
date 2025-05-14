@@ -11,6 +11,8 @@
   };
 
   commonSessionVariables = {
+    # SHELL = "${builtins.getEnv "HOME"}/.nix-profile/bin/zsh";
+    SHELL = "${pkgs.zsh}/bin/zsh";
     EDITOR = "nvim";
     NIXPKGS_ALLOW_UNFREE = "1";
     ROS_DOMAIN_ID = "16";
@@ -35,8 +37,8 @@ in {
     enable = true;
     sessionVariables = commonSessionVariables;
     shellAliases = commonShellAliases;
-    initExtra = ''
-      exec zsh
-    '';
+    # initExtra = ''
+    #   exec zsh
+    # '';
   };
 }

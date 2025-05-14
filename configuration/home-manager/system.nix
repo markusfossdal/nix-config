@@ -3,7 +3,6 @@
   lib,
   ...
 }: {
-
   home.stateVersion = "24.11";
 
   home.username = "mf";
@@ -22,5 +21,4 @@
   #     ${pkgs.rustup}/bin/rustup default stable
   #   fi
   # '';
-
 }
