@@ -2,7 +2,8 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
 
   home.packages = with pkgs; [
     # --- DEV toolchain
@@ -13,11 +14,11 @@
     cmake-language-server
     cmake
     nodejs
-    alejandra #nvim formatter
+    alejandra # nvim formatter
     rustup
     # --- APPS
     yazi
-    inputs.nixvim.packages.${pkgs.system}.default #includes nixvim
+    inputs.nixvim.packages.${pkgs.system}.default # includes nixvim
     lsd
     ripgrep
     bat

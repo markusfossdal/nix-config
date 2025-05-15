@@ -1,9 +1,11 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   commonShellAliases = {
     lg = "lazygit";
     ls = "lsd -F --icon never";
     cat = ''bat'';
-    fzf = ''      selected="$(
+    fzf = ''
+      selected="$(
                   	find . \( -path './.git' -o -path './node_modules' -o -path './dist' \) -prune -o -type f -print |
                   	command fzf --preview 'bat --style=numbers --color=always {}'
                 	)"
@@ -18,7 +20,8 @@
     ROS_DOMAIN_ID = "16";
     # PATH="$HOME/.cargo/bin:$PATH";
   };
-in {
+in
+{
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -30,7 +33,11 @@ in {
 
       theme = "robbyrussell";
       # oh-my-zsh plugins
-      plugins = ["git" "z" "fzf"];
+      plugins = [
+        "git"
+        "z"
+        "fzf"
+      ];
     };
   };
 

@@ -2,14 +2,12 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   home.stateVersion = "24.11";
 
   home.username = "mf";
-  home.homeDirectory =
-    if pkgs.stdenv.isDarwin
-    then "/Users/mf"
-    else "/home/mf";
+  home.homeDirectory = if pkgs.stdenv.isDarwin then "/Users/mf" else "/home/mf";
 
   # home.activation.rustup = lib.hm.dag.entryAfter ["writeBoundary"] ''
   #   export CARGO_HOME=$HOME/.cargo

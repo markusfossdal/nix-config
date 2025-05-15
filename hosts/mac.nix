@@ -4,7 +4,8 @@
   nix-homebrew,
   mac-app-util,
   ...
-}: {
+}:
+{
   # Packages that needs manual installation
   #xcode (triggered by git pull the first time)
 

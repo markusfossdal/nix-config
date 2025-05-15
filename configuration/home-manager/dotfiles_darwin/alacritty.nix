@@ -1,4 +1,5 @@
-{config, ...}: {
+{ config, ... }:
+{
   #alacritty
   home.file = {
     "/.config/alacritty/alacritty.toml".text = ''
