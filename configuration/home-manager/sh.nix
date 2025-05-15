@@ -16,6 +16,7 @@
     EDITOR = "nvim";
     NIXPKGS_ALLOW_UNFREE = "1";
     ROS_DOMAIN_ID = "16";
+    # PATH="$HOME/.cargo/bin:$PATH";
   };
 in {
   programs.zsh = {

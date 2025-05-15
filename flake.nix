@@ -79,7 +79,7 @@
               (import ./configuration/home-manager/sh.nix {
                 pkgs = darwinPkgs;
               })
-              (import ./configuration/home-manager/dotfiles {
+              (import ./configuration/home-manager/dotfiles_darwin {
                 pkgs = darwinPkgs;
               })
               (import ./configuration/home-manager/system.nix {
@@ -109,7 +109,7 @@
         ./configuration/home-manager/ubuntu/default.nix
         ./configuration/home-manager/fonts.nix
         ./configuration/home-manager/sh.nix
-        ./configuration/home-manager/dotfiles
+        ./configuration/home-manager/dotfiles_ubuntu
         ./configuration/home-manager/system.nix
       ];
       extraSpecialArgs = {
