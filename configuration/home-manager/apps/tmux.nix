@@ -65,6 +65,9 @@
           set -g @vim_navigator_prefix_mapping_clear_screen ""
         '';
       }
+      {
+        plugin = tmuxPlugins.resurrect;
+      }
     ];
 
   };
