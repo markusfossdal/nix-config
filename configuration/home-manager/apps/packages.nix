@@ -17,6 +17,7 @@
     alejandra # nvim formatter
     rustup
     # --- APPS
+    dysk
     yazi
     inputs.nixvim.packages.${pkgs.system}.default # includes nixvim
     lsd

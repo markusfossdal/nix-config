@@ -65,8 +65,14 @@
           set -g @vim_navigator_prefix_mapping_clear_screen ""
         '';
       }
+      # restoring of sessions
       {
         plugin = tmuxPlugins.resurrect;
+      }
+
+      # continious saving of sessions
+      {
+        plugin = tmuxPlugins.continuum;
       }
     ];
 
