@@ -13,6 +13,7 @@
     clang-tools
     cmake-language-server
     cmake
+    python312Full
     nodejs
     alejandra # nvim formatter
     rustup
