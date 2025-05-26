@@ -17,6 +17,7 @@
     nodejs
     alejandra # nvim formatter
     rustup
+    eigen # c++ lib
     # --- APPS
     dysk
     yazi
