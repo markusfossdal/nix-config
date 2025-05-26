@@ -49,4 +49,12 @@ in
     #   exec zsh
     # '';
   };
+
+  # admin of .inputrc
+  programs.readline = {
+    enable = true;
+    extraConfig = ''
+      set match-hidden-files on
+    '';
+  };
 }
