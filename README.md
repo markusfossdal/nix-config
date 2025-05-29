@@ -10,7 +10,7 @@ curl
 
 - before installing Nix package manager from [www.nixos.com](www.nixos.com)
 
-- edit `/etc/nix/nix.conf` to include 
+- edit `/etc/nix/nix.conf` to include
 ```
 experimental-features = nix-command flakes
 ```
@@ -31,4 +31,5 @@ google-chrome
 ros2
 gazebo
 matlab
+docker
 ```

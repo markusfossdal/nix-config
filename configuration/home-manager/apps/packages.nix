@@ -15,8 +15,10 @@
     cmake
     python312Full
     nodejs
-    alejandra # nvim formatter
-    rustup
+    rustc # rust toolchain
+    cargo # rust toolchain
+    rust-analyzer # rust toolchain
+    clippy # rust toolchain
     eigen # c++ lib
     # --- APPS
     dysk
