@@ -21,7 +21,6 @@
     clippy # rust toolchain
     eigen # c++ lib
     # --- APPS
-    dysk
     yazi
     inputs.nixvim.packages.${pkgs.system}.default # includes nixvim
     lsd

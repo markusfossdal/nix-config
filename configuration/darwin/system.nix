@@ -3,7 +3,9 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
+  system.primaryUser = "mf"; # will be deprecated in future.
   system.defaults = {
     # dock
     dock.autohide = true;
@@ -24,7 +26,7 @@
       "/System/Applications/Notes.app"
     ];
     dock.show-recents = false;
-    dock.persistent-others = [];
+    dock.persistent-others = [ ];
     dock.mru-spaces = false;
 
     # screen capture
@@ -41,7 +43,7 @@
     menuExtraClock.IsAnalog = false;
     menuExtraClock.Show24Hour = true;
     menuExtraClock.ShowAMPM = false;
-    menuExtraClock.ShowDate = 1; #0: when space allows, 1: always, 2:never
+    menuExtraClock.ShowDate = 1; # 0: when space allows, 1: always, 2:never
     menuExtraClock.ShowDayOfMonth = true;
     menuExtraClock.ShowDayOfWeek = true;
     menuExtraClock.ShowSeconds = true;
@@ -56,10 +58,10 @@
     NSGlobalDomain.NSAutomaticQuoteSubstitutionEnabled = false;
 
     # finder
-    finder.FXPreferredViewStyle = "Nlsv"; #"clmv", "icnv", "Nlsv", "Flwv"
+    finder.FXPreferredViewStyle = "Nlsv"; # "clmv", "icnv", "Nlsv", "Flwv"
     finder.AppleShowAllExtensions = false;
     finder.AppleShowAllFiles = false;
-    finder.FXRemoveOldTrashItems = false; #whether to remove trash after 30d or not.
+    finder.FXRemoveOldTrashItems = false; # whether to remove trash after 30d or not.
     finder.ShowExternalHardDrivesOnDesktop = false;
     finder.ShowHardDrivesOnDesktop = false;
     finder.ShowMountedServersOnDesktop = false;
@@ -67,7 +69,7 @@
     finder.ShowPathbar = true;
     finder.ShowStatusBar = true;
     finder._FXShowPosixPathInTitle = true;
-    finder._FXSortFoldersFirst = false; #folders ontop when sorting
+    finder._FXSortFoldersFirst = false; # folders ontop when sorting
     finder._FXSortFoldersFirstOnDesktop = false;
 
     # window manager
