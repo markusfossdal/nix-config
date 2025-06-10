@@ -3,12 +3,13 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   # Homebrew packages for mac
   homebrew = {
     enable = true;
     brews = [
-      "mas" #used to search for mac app store ids
+      "mas" # used to search for mac app store ids
     ];
     casks = [
       "dropbox"
@@ -18,6 +19,7 @@
       "microsoft-auto-update"
       "logi-options+"
       "1password"
+      "adobe-acrobat-reader"
     ];
     masApps = {
       # "Yoink" = 457622435;
