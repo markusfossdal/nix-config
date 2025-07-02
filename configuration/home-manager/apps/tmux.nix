@@ -21,6 +21,9 @@
       #statusbar pos
       set-option -g status-position top
 
+      #set zoomed flag when pane is zoomed
+      set -g status-right '#{?window_zoomed_flag,[ZOOMED],}'
+
       #leader key
       unbind C-b
       set -g prefix C-s
