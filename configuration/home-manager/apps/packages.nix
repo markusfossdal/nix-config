@@ -20,6 +20,7 @@
     rust-analyzer # rust toolchain
     clippy # rust toolchain
     eigen # c++ lib
+    gtest # google test framework for c++
     # --- APPS
     yazi
     inputs.nixvim.packages.${pkgs.system}.default # includes nixvim
