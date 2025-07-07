@@ -33,6 +33,7 @@
     tree
     lazygit
     git
+    git-lfs
     curl
     # zerotierone
   ];
