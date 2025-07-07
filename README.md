@@ -33,4 +33,5 @@ gazebo
 matlab
 docker
 zerotier
+openssh-server
 ```
