@@ -34,5 +34,6 @@
     lazygit
     git
     curl
+    # zerotierone
   ];
 }

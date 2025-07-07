@@ -32,4 +32,5 @@ ros2
 gazebo
 matlab
 docker
+zerotier
 ```
