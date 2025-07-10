@@ -1,6 +1,7 @@
 { pkgs, ... }:
 let
   commonShellAliases = {
+    linkpreset = "ln -sfv /home/mf/Dropbox/synced/dev/ros2_ws/CMakePresets.json .";
     lg = "lazygit";
     ls = "lsd -F --icon never";
     cat = ''bat'';

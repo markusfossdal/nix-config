@@ -7,19 +7,20 @@
 
   home.packages = with pkgs; [
     # --- DEV toolchain
-    llvmPackages.clang
-    llvmPackages.lld
-    llvmPackages.llvm
+    # llvmPackages.clang
+    # llvmPackages.lld
+    # llvmPackages.llvm
     clang-tools
-    cmake-language-server
-    cmake
-    python312Full
-    nodejs
-    rustc # rust toolchain
-    cargo # rust toolchain
-    rust-analyzer # rust toolchain
-    clippy # rust toolchain
-    eigen # c++ lib
+    # cmake-language-server
+    # cmake
+    # python312Full
+    # nodejs
+    # rustc # rust toolchain
+    # cargo # rust toolchain
+    # rust-analyzer # rust toolchain
+    # clippy # rust toolchain
+    # eigen # c++ lib
+    # sophus
     # gtest # google test framework for c++
     # --- APPS
     yazi
