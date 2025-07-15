@@ -36,6 +36,7 @@
     git
     git-lfs
     curl
+    flameshot
     # zerotierone
   ];
 }
