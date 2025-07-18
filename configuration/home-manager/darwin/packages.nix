@@ -7,6 +7,5 @@
     discord
     vscode
     google-chrome
-    signal-desktop
   ];
 }
