@@ -18,7 +18,8 @@ let
     SHELL = "${pkgs.zsh}/bin/zsh";
     EDITOR = "nvim";
     NIXPKGS_ALLOW_UNFREE = "1";
-    ROS_DOMAIN_ID = "16";
+    ROS_DOMAIN_ID = "111";
+    # ROS_LOCALHOST_ONLY = "0"; #deprecated
     # PATH="$HOME/.cargo/bin:$PATH";
   };
 in
