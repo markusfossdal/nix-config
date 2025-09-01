@@ -37,5 +37,6 @@
     git-lfs
     curl
     flameshot
+    # signal-desktop
   ];
 }

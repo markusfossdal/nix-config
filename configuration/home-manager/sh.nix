@@ -18,7 +18,7 @@ let
     SHELL = "${pkgs.zsh}/bin/zsh";
     EDITOR = "nvim";
     NIXPKGS_ALLOW_UNFREE = "1";
-    ROS_DOMAIN_ID = "16";
+    ROS_DOMAIN_ID = "21";
     # PATH="$HOME/.cargo/bin:$PATH";
   };
 in
