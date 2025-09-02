@@ -20,6 +20,7 @@
       "/System/Applications/System Settings.app"
       "/System/Applications/FindMy.app"
       "/Applications/Microsoft Teams.app"
+      "/Applications/Signal.app"
       "/Applications/Microsoft Outlook.app"
       "/Applications/Spotify.app"
       "/System/Applications/Messages.app"
