@@ -28,19 +28,6 @@
       ...
     }:
     let
-      # darwinSystem = "aarch64-darwin";
-      # linuxSystem = "x86_64-linux";
-      #
-      # darwinPkgs = import nixpkgs {
-      #   system = darwinSystem;
-      #   config.allowUnfree = true;
-      # };
-      #
-      # linuxPkgs = import nixpkgs {
-      #   system = linuxSystem;
-      #   config.allowUnfree = true;
-      # };
-
       darwinSystem = "aarch64-darwin";
       linuxSystem = "x86_64-linux";
 
