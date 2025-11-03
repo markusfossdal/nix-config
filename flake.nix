@@ -28,23 +28,34 @@
       ...
     }:
     let
+      # darwinSystem = "aarch64-darwin";
+      # linuxSystem = "x86_64-linux";
+      #
+      # darwinPkgs = import nixpkgs {
+      #   system = darwinSystem;
+      #   config.allowUnfree = true;
+      # };
+      #
+      # linuxPkgs = import nixpkgs {
+      #   system = linuxSystem;
+      #   config.allowUnfree = true;
+      # };
+
       darwinSystem = "aarch64-darwin";
       linuxSystem = "x86_64-linux";
 
-      darwinPkgs = import nixpkgs {
-        system = darwinSystem;
-        config.allowUnfree = true;
-      };
-      linuxPkgs = import nixpkgs {
-        system = linuxSystem;
-        config.allowUnfree = true;
-      };
+      darwinPkgs = nixpkgs.legacyPackages.${darwinSystem};
+      linuxPkgs = nixpkgs.legacyPackages.${linuxSystem};
+
     in
     {
+
       darwinConfigurations."mbp" = nix-darwin.lib.darwinSystem {
         system = darwinSystem;
         pkgs = darwinPkgs;
         modules = [
+          { nixpkgs.config.allowUnfree = true; }
+
           # host specific
           (import ./hosts/mac.nix {
             self = self;
@@ -68,6 +79,8 @@
             ];
 
             home-manager.users."mf" = {
+              nixpkgs.config.allowUnfree = true;
+
               imports = [
                 (import ./configuration/home-manager/apps {
                   pkgs = darwinPkgs;
