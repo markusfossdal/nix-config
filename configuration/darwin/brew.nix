@@ -20,6 +20,9 @@
       "logi-options+"
       "1password"
       "adobe-acrobat-reader"
+      "cmake"
+      "eigen"
+      "ninja"
     ];
     masApps = {
       # "Yoink" = 457622435;
