@@ -21,6 +21,10 @@ experimental-features = nix-command flakes
 ```
 nix run .#homeConfigurations.$USER@$HOST.activationPackage
 ```
+or
+```
+nix run home-manager -- switch --flake .#${USER}@${HOST} -b backup
+```
 
 ### Software not managed by home-manager
 ```
@@ -36,3 +40,4 @@ zerotier
 openssh-server
 signal
 ```
+
