@@ -214,6 +214,10 @@
               status_command i3status
               position top
       }
+
+      #screen resolution
+      exec "xrandr --output DP-4 --mode 5120x1440 --rate 120"
+
     '';
   };
 }
