@@ -46,8 +46,8 @@
       # bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
       # bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-      bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
-      bindsym XF86AudioLowerVolume exec amixer set Master 5%-
+      bindsym XF86AudioRaiseVolume exec amixer set Master 2%+
+      bindsym XF86AudioLowerVolume exec amixer set Master 2%-
       bindsym XF86AudioMute        exec amixer set Master toggle
 
 
