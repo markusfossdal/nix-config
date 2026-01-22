@@ -223,6 +223,9 @@
       #screen resolution
       exec "xrandr --output DP-4 --mode 5120x1440 --rate 120"
 
+      #gnome control panel
+      bindsym $mod+p exec env XDG_CURRENT_DESKTOP=GNOME gnome-control-center
+
     '';
   };
 }
